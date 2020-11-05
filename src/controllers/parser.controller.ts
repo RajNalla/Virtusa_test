@@ -4,6 +4,7 @@ import {
   sendSuccessResponse,
 } from "../utils/request.handler";
 import * as parserService from "../services/parser.service";
+
 export async function v1Parser(
   req: Request,
   res: Response,

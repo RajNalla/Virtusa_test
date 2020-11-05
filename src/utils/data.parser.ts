@@ -25,7 +25,6 @@ export function parseData(
       currentString += data;
     }
   });
-  console.log(formatNum)
   return {
     firstName: removeZeros ? removeZero(dataStrings[0]) : dataStrings[0],
     lastName: removeZeros ? removeZero(dataStrings[1]) : dataStrings[1],
@@ -37,7 +36,6 @@ export function removeZero(stringData: string): string | null {
   if (stringData) return stringData.replace(/0/g, "");
 }
 export function formatNumber(stringData: string): string | null {
-    console.log(stringData)
   if (stringData)
     return (
       stringData.substr(0, 3) + "-" + stringData.substr(3, stringData.length)

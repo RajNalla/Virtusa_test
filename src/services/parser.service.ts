@@ -8,9 +8,8 @@ export async function v1Parser(details) {
   }
 }
 
-export async function v2Parser(details) {
+export async function v2Parser(details?) {
   try {
-      console.log('v22')
     return parseData(details.data, true, true);
   } catch (err) {
     throw err;

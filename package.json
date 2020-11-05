@@ -6,7 +6,23 @@
   "scripts": {
     "start:server": "node ./dist/server.js",
     "start": "npx ts-node ./src/server.ts",
-    "test": "npm test"
+    "build": "npx tsc",
+    "code-coverage": "nyc --reporter=html && npm run test",
+    "test": "jest --coverage --coverageDirectory=output/coverage/jest",
+    "show-coverage-win": "start output/coverage/jest/lcov-report/index.html"
+  },
+  "jest": {
+    "coverageReporters": [
+      "text"
+    ],
+    "reporters": [
+      "default",
+      "jest-junit"
+    ]
+  },
+  "jest-junit": {
+    "output": "output/coverage/junit/junit.xml",
+    "usePathForSuiteName": "true"
   },
   "repository": {
     "type": "git",
@@ -24,6 +40,7 @@
     "express": "^4.17.1",
     "lokijs": "^1.5.8",
     "morgan": "^1.10.0",
+    "sinon": "^9.2.1",
     "ts-jest": "^25.4.0",
     "typescript": "^3.8.3"
   },
